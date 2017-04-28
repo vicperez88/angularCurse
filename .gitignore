@@ -12,3 +12,4 @@ quickstart/e2e/**/*.js
 quickstart/e2e/**/*.js.map
 quickstart/_test-output
 quickstart/_temp
+SPA/node_modules
