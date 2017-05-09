@@ -3,12 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+//Rutas
+import { APP_ROUTING } from './app.routes';
+
+//Services
+import {HeroesService} from './services/heroes.service';
+
+//components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/share/navbar/navbar.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
-import { APP_ROUTING } from './app.routes';
+import { HeroeComponent } from './components/heroe/heroe.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +24,8 @@ import { APP_ROUTING } from './app.routes';
     HomeComponent,
     NavbarComponent,
     AboutComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +33,11 @@ import { APP_ROUTING } from './app.routes';
     HttpModule,
     APP_ROUTING
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    HeroesService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -1,3 +1,10 @@
+.img-logo{
+  width: 150px
+}
+
+body{
+  padding-bottom: 50px;
+}
 .main-container{
   margin-top: 20px;
 }
