@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class HeroesService {
 
+  private searchHeroes: Heroe[];
   private heroes:Heroe[] = [
       {
         nombre: "Aquaman",
@@ -64,7 +65,11 @@ export class HeroesService {
     return this.heroes;
   }
 
-  public getHeroe( idx: number): Heroe {
+  public getSearchHeroes( idx: number ): Heroe {
+    return this.searchHeroes[idx];
+  }
+
+  public getHeroe( idx: number ): Heroe {
     return this.heroes[idx];
   }
 
@@ -78,6 +83,7 @@ export class HeroesService {
         heroesArr.push(heroe);
       }
     }
+    this.searchHeroes = heroesArr;
     return heroesArr;
   }
 
