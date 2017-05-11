@@ -1,0 +1,178 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Variable</th>
+        <th>Pipe</th>
+        <th>Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td> {{ nombre }} </td>
+        <td> upercase </td>
+        <td> {{ nombre | uppercase }} </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td> {{ nombre }} </td>
+        <td> lowercase </td>
+        <td> {{ nombre | lowercase }} </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td> {{ nombre }} </td>
+        <td> slice:3 </td>
+        <td> {{ nombre | slice:3 }} </td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td> {{ nombre }} </td>
+        <td> slice:0:3 </td>
+        <td> {{ nombre | slice:0:3 }} </td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td> {{ arreglo }} </td>
+        <td> slice:1:5 </td>
+        <td> {{ arreglo | slice:1:5 }} </td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td> {{ PI }} </td>
+        <td> number </td>
+        <td> {{ PI | number }} </td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td> {{ PI }} </td>
+        <td> number </td>
+        <td> {{ PI | number:'3.0-0' }} </td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td> {{ PI }} </td>
+        <td> number </td>
+        <td> {{ PI | number:'1.0-2' }} </td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td> {{ percent }} </td>
+        <td> percent </td>
+        <td> {{ percent | percent }} </td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td> {{ percent }} </td>
+        <td> percent:'2.2-4' </td>
+        <td> {{ percent | percent:'2.2-4' }} </td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td> {{ money }} </td>
+        <td> currency </td>
+        <td> {{ money | currency }} </td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td> {{ money }} </td>
+        <td> currency:'EUR'</td>
+        <td> {{ money | currency:'EUR' }} </td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td> {{ money }} </td>
+        <td> currency:'EUR':true</td>
+        <td> {{ money | currency:'EUR':true }} </td>
+      </tr>
+      <tr>
+        <th scope="row">14</th>
+        <td> {{ money }} </td>
+        <td> currency:'EUR':true:'4.0-0'</td>
+        <td> {{ money | currency:'EUR':true:'4.0-0' }} </td>
+      </tr>
+      <tr>
+        <th scope="row">15</th>
+        <td> {{ money }} </td>
+        <td> number:'.2-2' </td>
+        <td> {{ money | number:'.2-2' }} </td>
+      </tr>
+      <tr>
+        <th scope="row">16</th>
+        <td> {{ heroe }} </td>
+        <td> number:'.2-2' </td>
+        <td> {{ heroe }} </td>
+      </tr>
+      <tr>
+        <th scope="row">17</th>
+        <td> {{ valorDePromesa }} </td>
+        <td> async </td>
+        <td> {{ valorDePromesa }} </td>
+      </tr>
+      <tr>
+        <th scope="row">19</th>
+        <td> {{ valorDePromesa }} </td>
+        <td> async </td>
+        <td> {{ valorDePromesa | async }} </td>
+      </tr>
+      <tr>
+        <th scope="row">20</th>
+        <td> {{ fecha }} </td>
+        <td> date </td>
+        <td> {{ fecha | date }} </td>
+      </tr>
+      <tr>
+        <th scope="row">21</th>
+        <td> {{ fecha }} </td>
+        <td> date:'medium' </td>
+        <td> {{ fecha | date:'medium' }} </td>
+      </tr>
+      <tr>
+        <th scope="row">22</th>
+        <td> {{ fecha }} </td>
+        <td> date </td>
+        <td> {{ fecha | date:'MMMM - dd - yyyy' }} </td>
+      </tr>
+      <tr>
+        <th scope="row">22</th>
+        <td> {{ nombreCompleto }} </td>
+        <td> capitalizado </td>
+        <td> {{ nombreCompleto | capitalizado }} </td>
+      </tr>
+      <tr>
+        <th scope="row">22</th>
+        <td> {{ nombreCompleto }} </td>
+        <td> capitalizado:false </td>
+        <td> {{ nombreCompleto | capitalizado:false }} </td>
+      </tr>
+      <tr>
+        <th scope="row">22</th>
+        <td> {{ nombre }} </td>
+        <td> contrasena:{{ active }}
+          <br>
+          <button class="btn btn-outline-primary" type="button" name="button" (click)="active=!active">Activar/Desactivar</button>
+        </td>
+        <td> {{ nombreCompleto | contrasena:active }} </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Slice</h4>
+  <ul>
+    <li *ngFor="let item of arreglo | slice:5:20"> {{ item }}</li>
+  </ul>
+
+  <h4>JSON</h4>
+  <pre>
+    {{ heroe | json }}
+  </pre>
+  <h4>YouTube <small>video</small></h4>
+  <hr>
+  <iframe width="560" height="315" [src]="video | domeseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
+
+<br><br><br><br><br><br><br><br>
+</div>

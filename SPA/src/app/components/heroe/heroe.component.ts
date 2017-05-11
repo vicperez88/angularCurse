@@ -16,7 +16,7 @@ export class HeroeComponent implements OnInit {
   ) {
     this.activateRoute.params.subscribe( params =>{
       console.log( params['id'] );
-      if ( params['search'] ) {
+      if ( params['search'] == true) {
         this.heroe = this._heroesService.getSearchHeroes( params['id'] );
       } else {
         this.heroe = this._heroesService.getHeroe( params['id'] );
