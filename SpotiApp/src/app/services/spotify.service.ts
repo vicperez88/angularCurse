@@ -38,4 +38,16 @@ export class SpotifyService {
 
   }
 
+  getTop( id:string ) {
+
+    let query = `/${ id }/top-tracks?country=US`;
+    let url = this.urlArtista + query;
+
+    return this.http.get( url )
+    .map( res =>{
+      return res.json().tracks;
+    } )
+
+  }
+
 }
